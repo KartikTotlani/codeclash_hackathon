@@ -5,15 +5,17 @@
 This project focuses on developing an **AI-powered cybersecurity shield** for IoT networks that **detects, mitigates, and adapts** to real-time cyber threats like malware injections, botnet attacks, and side-channel exploits.  
 
 ## 🔥 Features  
-- **IoT Network Simulation:** Emulated IoT devices with constraints (low RAM, limited CPU, etc.).  
-- **Cyberattack Simulation:** Emulated DoS, MITM, ARP Spoofing, DNS Poisoning attacks.  
-- **AI-Based Intrusion Detection:** Detects anomalies using LSTMs, Transformers, and GNNs.  
-- **Self-Healing Security Framework:** Auto-recovery, quarantine, and attack-adaptive firewall policies.  
+- **IoT Network Simulation:** Emulated IoT devices with constraints capturing and tracing data packets. 
+                             ✅ Install Npcap (Recommended)
+  Download Npcap from the official website: 👉 https://npcap.com/#download (Install it with the "WinPcap API-compatible mode" enabled)
+- **Cyberattack Simulation:** Emulated DoS, DDos
+- **AI-Based Intrusion Detection:** Detects anomalies using LSTMs, Transformers.  
+- **Self-Healing Security Suggestions:** Auto-recovery, quarantine and attack-adaptive firewall policies.  
 - **Secure Communication Protocol:** Low-latency encrypted IoT data transmission.  
-- **Live Monitoring Dashboard:** Real-time alerts, logs, and analytics for threat detection.  
+- **Live Monitoring Dashboard:** Real-time alerts, logs and analytics for threat detection.  
 
 ## 🛠️ Tech Stack  
-- **IoT Simulation:** IoTIFY, Cooja, NS-3, Node-RED  
+- **IoT Simulation:** IoTIFY, Node-RED  
 - **Cyberattack Emulation:** Kali Linux, Scapy, Wireshark  
 - **AI/ML Models:** LSTMs, Transformers, TinyML, ONNX  
 - **Backend:** Python (FastAPI), ScyllaDB/DynamoDB  
