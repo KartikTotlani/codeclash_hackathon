@@ -7,11 +7,11 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 # Load the model
-with open("final_model.pkl", "rb") as f:
+with open(r"C:\Users\Anonymous\Desktop\Purdue\codeclash_hackathon\Model Training\final_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 # Load the CSV data
-df = pd.read_csv("ModelTrainingCSV/sampled_data.csv")
+df = pd.read_csv(r"C:\Users\Anonymous\Desktop\Purdue\codeclash_hackathon\Model Training\sampled_data.csv")
 
 request_counter = 0
 
@@ -22,7 +22,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # List of allowed origins
+    allow_origins=["*"],  # List of allowed origins
     allow_credentials=True,
     allow_methods=["*"],    # Allow all HTTP methods
     allow_headers=["*"],    # Allow all headers
@@ -33,11 +33,12 @@ def predict():
     global request_counter
     
     # Alternate prediction logic
-    remainder = request_counter % 10
-    if 0 < remainder <= 5:
-        p = 0
+    remainder = request_counter % 4  
+    if remainder < 2:
+        p = 0  
     else:
-        p = 1
+        p = 1 
+
     
     # Filter data
     filtered_df = df[df["label"] == p]
@@ -51,6 +52,7 @@ def predict():
     
     # Increment counter
     request_counter += 1
+    random_row = random_row.applymap(lambda x: abs(x) if isinstance(x, (int, float)) else x)
     
     return {
         "row": random_row.to_dict(orient="records")[0],
