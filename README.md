@@ -123,5 +123,8 @@ We deliberately avoided Transformers and LSTMs despite their potential effective
 ## 📜 License
 This project is licensed under the **MIT License**.
 
+## 🚀 Live Demo
+[Cyber Sentinal Dashboard](https://cyber-sentinal-dashboard.vercel.app/)
+
 ## 🤝 Contributing
 Contributions are welcome! Please **open an issue** or create a **pull request**.
